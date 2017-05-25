@@ -11,14 +11,12 @@ import UIKit
 
 @discardableResult public func announce<T: Announcement>(_ announcement: T,
                                                          on context: PresentationContext,
-                                                         withAppearance appearance: T.AppearanceType? = nil,
                                                          withCustomPresenter presenter: Presenter) -> DismissalToken where T: UIView {
     return presenter.present(announcement: announcement)
 }
 
 @discardableResult public func announce<T: Announcement>(_ announcement: T,
                                                          on context: PresentationContext,
-                                                         withAppearance appearance: T.AppearanceType? = nil,
                                                          withMode mode: PresentationMode = .indefinite) -> DismissalToken where T: UIView {
 
     let presenter = PresenterFactory.presenter(withContext: context, andMode: mode)

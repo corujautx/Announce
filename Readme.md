@@ -1,26 +1,46 @@
 ## Announce
 
 [![Platforms](https://img.shields.io/cocoapods/p/Announce.svg)](https://cocoapods.org/pods/Announce)
-[![License](https://img.shields.io/cocoapods/l/Announce.svg)](https://raw.githubusercontent.com/cookiecutter-swift/Announce/master/LICENSE)
+[![License](https://img.shields.io/cocoapods/l/Announce.svg)](https://raw.githubusercontent.com/corujautx/Announce/master/LICENSE)
 
 [![Swift Package Manager](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![CocoaPods compatible](https://img.shields.io/cocoapods/v/Announce.svg)](https://cocoapods.org/pods/Announce)
 
-[![Travis](https://img.shields.io/travis/cookiecutter-swift/Announce/master.svg)](https://travis-ci.org/cookiecutter-swift/Announce/branches)
+[![Travis](https://img.shields.io/travis/corujautx/Announce/master.svg)](https://travis-ci.org/corujautx/Announce/branches)
 [![JetpackSwift](https://img.shields.io/badge/JetpackSwift-framework-red.svg)](http://github.com/JetpackSwift/Framework)
 
 A simple framework to display alert and notification messages in Swift
 
+![Example image](https://cl.ly/3L2F1J133B3P/Screen%20Recording%202017-05-25%20at%2005.44%20PM.gif)
+
 - [Requirements](#requirements)
-- [Installation](#installation)
 - [Usage](#usage)
+- [Installation](#installation)
+- [Acknowledgments](#acknowledgments)
 - [License](#license)
 
 ## Requirements
 
 - iOS 8.0+
 - Xcode 8.0+
+
+## Usage
+
+```swift 
+//Fire a quick message with a theme!
+let message = Message(message: "A simple message", theme: .success)
+announce(message, on: .view(aView), withMode: .timed(5.0))
+
+//Fire a message with a title and customized appearance
+let appearance = MessageWithTitleAppearance(foregroundColor: .white, backgroundColor: .red)
+let message = MessageWithTitle(title: "A title", message: "A message", appearance: appearance)
+let token = announce(message, on: .viewController(aViewController), withMode: .indefinite)
+
+token.dismiss()
+```
+
+### Display modes 
 
 ## Installation
 
@@ -76,7 +96,7 @@ import PackageDescription
 let package = Package(
     name: "HelloAnnounce",
     dependencies: [
-        .Package(url: "https://github.com/cookiecutter-swift/Announce.git", "1.0")
+        .Package(url: "https://github.com/corujautx/Announce.git", "1.0")
     ]
 )
 ```
@@ -96,7 +116,7 @@ $ git init
 - Add Announce as a git [submodule](http://git-scm.com/docs/git-submodule) by running the following command:
 
 ```bash
-$ git submodule add https://github.com/cookiecutter-swift/Announce.git
+$ git submodule add https://github.com/corujautx/Announce.git
 $ git submodule update --init --recursive
 ```
 
@@ -120,7 +140,7 @@ $ git submodule update --init --recursive
 
 #### Embeded Binaries
 
-- Download the latest release from https://github.com/cookiecutter-swift/Announce/releases
+- Download the latest release from https://github.com/corujautx/Announce/releases
 - Next, select your application project in the Project Navigator (blue project icon) to navigate to the target configuration window and select the application target under the "Targets" heading in the sidebar.
 - In the tab bar at the top of that window, open the "General" panel.
 - Click on the `+` button under the "Embedded Binaries" section.
@@ -129,10 +149,8 @@ $ git submodule update --init --recursive
 
 ## Acknowledgments
 
-Helio Costa for helping me with the color palette for errors, warnings, information and success
-
-## Usage
+Helio Costa for helping me with the color palette for themes
 
 ## License
 
-Announce is released under the MIT license. See [LICENSE](https://github.com/cookiecutter-swift/Announce/blob/master/LICENSE) for details.
+Announce is released under the MIT license. See [LICENSE](https://github.com/corujautx/Announce/blob/master/LICENSE) for details.
