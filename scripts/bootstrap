@@ -1,1 +1,3 @@
-carthage update --no-use-binaries --use-submodules
+#!/bin/bash
+
+carthage update --no-use-binaries --use-submodules --platform iOS

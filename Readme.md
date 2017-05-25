@@ -10,7 +10,7 @@
 [![Travis](https://img.shields.io/travis/cookiecutter-swift/Announce/master.svg)](https://travis-ci.org/cookiecutter-swift/Announce/branches)
 [![JetpackSwift](https://img.shields.io/badge/JetpackSwift-framework-red.svg)](http://github.com/JetpackSwift/Framework)
 
-A fsimple framework to display alert and notification messages in Swift
+A simple framework to display alert and notification messages in Swift
 
 - [Requirements](#requirements)
 - [Installation](#installation)
@@ -19,7 +19,7 @@ A fsimple framework to display alert and notification messages in Swift
 
 ## Requirements
 
-- iOS 8.0+ / Mac OS X 10.10+ / tvOS 9.0+ / watchOS 2.0+
+- iOS 8.0+
 - Xcode 8.0+
 
 ## Installation
@@ -126,6 +126,10 @@ $ git submodule update --init --recursive
 - Click on the `+` button under the "Embedded Binaries" section.
 - Add the downloaded `Announce.framework`.
 - And that's it!
+
+## Acknowledgments
+
+Helio Costa for helping me with the color palette for errors, warnings, information and success
 
 ## Usage
 

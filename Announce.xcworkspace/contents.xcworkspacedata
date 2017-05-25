@@ -2,10 +2,10 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Announce.xcodeproj">
+      location = "group:Announce-Example/Announce-Example.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Announce.playground">
+      location = "group:Announce.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:scripts">
@@ -27,11 +27,5 @@
    </FileRef>
    <FileRef
       location = "group:Readme.md">
-   </FileRef>
-   <FileRef
-      location = "group:Carthage/Checkouts/Quick/Quick.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:Carthage/Checkouts/Nimble/Nimble.xcodeproj">
    </FileRef>
 </Workspace>

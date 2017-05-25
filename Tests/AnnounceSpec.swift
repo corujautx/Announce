@@ -3,23 +3,31 @@
 //  Announce
 //
 //  Created by Vitor Travain on 04/10/16.
-//  Copyright © 2017 cookiecutter-swift. All rights reserved.
+//  Copyright © 2017 Vitor Travain. All rights reserved.
 //
 
 import Quick
 import Nimble
 @testable import Announce
 
-class AnnounceSpec: QuickSpec {
+final class AnnounceSpec: QuickSpec {
 
     override func spec() {
+        describe("Announce") {
+            it("announces with a custom presenter") {
+                let view = UIView()
+                let fakeAnnouncement = FakeAnnouncement()
+                let fakePresenter = FakePresenter()
 
-        describe("AnnounceSpec") {
-            it("works") {
-                expect("Announce") == "Announce"
+                let token = announce(fakeAnnouncement, on: .view(view), withCustomPresenter: fakePresenter)
+
+                expect(fakePresenter.presentedAnnouncement).to(equal(fakeAnnouncement))
+
+                token.dismiss()
+
+                expect(fakePresenter.dismissed).to(beTrue())
             }
         }
-
     }
 
 }

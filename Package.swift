@@ -3,7 +3,7 @@
 //  Announce
 //
 //  Created by Vitor Travain on 23/10/15.
-//  Copyright © 2017 cookiecutter-swift. All rights reserved.
+//  Copyright © 2017 Vitor Travain. All rights reserved.
 //
 
 import PackageDescription
