@@ -1,17 +1,20 @@
 {
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "A35FAF32F1CB3BE768BC220F204D6123CC02BFC8",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
     "95438028B10BBB846574013D29F154A00556A9D1" : 9223372036854775807,
     "D0725CAC6FF2D66F2C83C2C48DC12106D42DAA64" : 9223372036854775807,
-    "E084C86B03F81D63323C9E7510697EA528A758C7" : 9223372036854775807
+    "E084C86B03F81D63323C9E7510697EA528A758C7" : 9223372036854775807,
+    "A35FAF32F1CB3BE768BC220F204D6123CC02BFC8" : 9223372036854775807
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "70B66115-3DB8-4767-9391-317702433FEE",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
     "95438028B10BBB846574013D29F154A00556A9D1" : "Announce\/Carthage\/Checkouts\/Quick\/Externals\/Nimble\/",
     "D0725CAC6FF2D66F2C83C2C48DC12106D42DAA64" : "Announce\/Carthage\/Checkouts\/Quick\/",
-    "E084C86B03F81D63323C9E7510697EA528A758C7" : "Announce\/Carthage\/Checkouts\/xcconfigs\/"
+    "E084C86B03F81D63323C9E7510697EA528A758C7" : "Announce\/Carthage\/Checkouts\/xcconfigs\/",
+    "A35FAF32F1CB3BE768BC220F204D6123CC02BFC8" : "Announce\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "Announce",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
@@ -21,6 +24,11 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Quick\/Nimble.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "95438028B10BBB846574013D29F154A00556A9D1"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/corujautx\/Announce.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A35FAF32F1CB3BE768BC220F204D6123CC02BFC8"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Quick\/Quick.git",

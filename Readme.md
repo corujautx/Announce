@@ -40,7 +40,81 @@ let token = announce(message, on: .viewController(aViewController), withMode: .i
 token.dismiss()
 ```
 
-### Display modes 
+### Can I use custom views?
+
+Yes, you can! You just need those views to conform to the `Announcement` protocol and provide them a configurable 
+`Appearance` and they should work fine. Also make sure the view does not break under the usage of leading and trailing 
+`NSLayoutConstraints` as the default `Presenter` use them.
+
+```swift
+struct MyCustomAnnouncementAppearance: Appearance {
+    let backgroundColor: UIColor
+    
+    static func defaultAppearance() -> MyCustomAnnouncementAppearance {
+        return MyCustomAnnouncementAppearance(backgroundColor: .black)
+    }
+}
+
+final class MyCustomAnnouncement: UIView, Announcement {
+    let appearance: MyCustomAnnouncementAppearance
+    
+    init(appearance: MyCustomAnnouncementAppearance? = nil) {
+        self.appearance = appearance ?? MyCustomAnnouncementAppearance.defaultAppearance()
+    }
+}
+```
+
+### I don't like the default animations, can I write a custom one?
+
+Yes, you can! Write a custom `Presenter` by conforming to the protocol. You can also ignore the default behavior that 
+installs constraints if your custom view does not support it.
+
+```swift
+struct MyCustomPresenter: Presenter {
+    let viewToDisplayReference: UIView
+
+    @discardableResult func present<T: Announcement>(announcement: T) -> DismissalToken where T : UIView {
+        // Install the view on the view to display, install constraints and create your own animation
+        
+        return DismissalToken {
+            // Run the animations to dismiss the view, remove it from its context and etc
+        }
+    }
+}
+```
+
+After creating your own presenter you can just call it by using:
+```swift
+let myCustomAnnouncement = MyCustomAnnouncement()
+let myPresenter = MyCustomPresenter(viewToDisplayReference: UIView())
+
+let token = announce(myCustomAnnouncement, withCustomPresenter: myPresenter)
+
+token.dismiss()
+```
+
+### I want to support the default themes in my view, how can I do it?
+
+Just create an extension on `Theme` returning your appearance and create a convenience init on your view.
+
+```swift
+extension Theme {
+    func appearanceForMyCustomView() -> MyCustomAppearance {
+        switch self {
+        case .success, .info, .warning, .danger:
+            return MyCustomAppearance.defaultAppearance()        
+        }
+    }
+}
+
+final class MyCustomView: UIView, Announcement {
+    //default implementation goes here
+    
+    convenience init(theme: Theme) {
+        self.init(appearance: theme.appearanceForMyCustomView())
+    }
+}
+```
 
 ## Installation
 

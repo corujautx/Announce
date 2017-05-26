@@ -15,11 +15,10 @@ final class AnnounceSpec: QuickSpec {
     override func spec() {
         describe("Announce") {
             it("announces with a custom presenter") {
-                let view = UIView()
                 let fakeAnnouncement = FakeAnnouncement()
                 let fakePresenter = FakePresenter()
 
-                let token = announce(fakeAnnouncement, on: .view(view), withCustomPresenter: fakePresenter)
+                let token = announce(fakeAnnouncement, withCustomPresenter: fakePresenter)
 
                 expect(fakePresenter.presentedAnnouncement).to(equal(fakeAnnouncement))
 

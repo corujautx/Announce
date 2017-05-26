@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 
 @discardableResult public func announce<T: Announcement>(_ announcement: T,
-                                                         on context: PresentationContext,
                                                          withCustomPresenter presenter: Presenter) -> DismissalToken where T: UIView {
     return presenter.present(announcement: announcement)
 }
@@ -21,7 +20,7 @@ import UIKit
 
     let presenter = PresenterFactory.presenter(withContext: context, andMode: mode)
 
-    return announce(announcement, on: context, withAppearance: appearance, withCustomPresenter: presenter)
+    return announce(announcement, withCustomPresenter: presenter)
 }
 
 
