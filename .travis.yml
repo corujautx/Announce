@@ -11,4 +11,4 @@ xcode_sdk: iphonesimulator8.0
 
 script:
 - pod lib lint Announce.podspec
-- xcodebuild clean build test -project Announce.xcodeproj -scheme Announce-iOS
+- xcodebuild clean build test -project Announce.xcodeproj -scheme Announce-iOS -destination "platform=iOS Simulator,name=iPhone 5s,OS=8.0"
