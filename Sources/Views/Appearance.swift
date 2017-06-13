@@ -90,3 +90,48 @@ public struct MessageWithImageAppearance: Appearance {
         return MessageWithImageAppearance(foregroundColor: .black, backgroundColor: .gray)
     }
 }
+
+public struct DraggableMessageWithImageAndSubtitleAppearance: Appearance {
+    public let titleFont: UIFont
+    public let subtitleFont: UIFont
+    public let messageFont: UIFont
+    
+    public let foregroundColor: UIColor
+    public let backgroundColor: UIColor
+    public let dragIndicatorColor: UIColor
+    
+    public let imageSize: CGSize
+    public let imageCornerRadius: CGFloat
+    public let imageContentMode: UIViewContentMode
+    
+    public let dragIndicatorSize: CGSize
+    public let dragIndicatorCornerRadius: CGFloat
+    
+    public init(titleFont: UIFont = .boldSystemFont(ofSize: 12.0),
+                subtitleFont: UIFont = .boldSystemFont(ofSize: 11.0),
+                messageFont: UIFont = .systemFont(ofSize: 11.0),
+                foregroundColor: UIColor,
+                backgroundColor: UIColor,
+                dragIndicatorColor: UIColor,
+                imageSize: CGSize = CGSize(width: 40.0, height: 40.0),
+                imageCornerRadius: CGFloat = 4.0,
+                imageContentMode: UIViewContentMode = .scaleAspectFill,
+                dragIndicatorSize: CGSize = CGSize(width: 40.0, height: 6.0),
+                dragIndicatorCornerRadius: CGFloat? = nil) {
+        self.titleFont = titleFont
+        self.subtitleFont = subtitleFont
+        self.messageFont = messageFont
+        self.foregroundColor = foregroundColor
+        self.backgroundColor = backgroundColor
+        self.dragIndicatorColor = dragIndicatorColor
+        self.imageSize = imageSize
+        self.imageCornerRadius = imageCornerRadius
+        self.imageContentMode = imageContentMode
+        self.dragIndicatorSize = dragIndicatorSize
+        self.dragIndicatorCornerRadius = dragIndicatorCornerRadius ?? dragIndicatorSize.height / 2
+    }
+    
+    public static func defaultAppearance() -> DraggableMessageWithImageAndSubtitleAppearance {
+        return DraggableMessageWithImageAndSubtitleAppearance(foregroundColor: .black, backgroundColor: .gray, dragIndicatorColor: .lightGray)
+    }
+}

@@ -151,4 +151,54 @@ extension Theme {
             )
         }
     }
+    
+    public func appearanceForDraggableMessageWithSubtitleAndImage() -> DraggableMessageWithImageAndSubtitleAppearance {
+        switch self {
+        case .neutral:
+            return DraggableMessageWithImageAndSubtitleAppearance(
+                titleFont: .boldSystemFont(ofSize: 14.0),
+                subtitleFont: .boldSystemFont(ofSize: 12.0),
+                messageFont: .systemFont(ofSize: 12.0),
+                foregroundColor: .black,
+                backgroundColor: Theme.neutralBackgroundColor,
+                dragIndicatorColor: .lightGray
+            )
+        case .success:
+            return DraggableMessageWithImageAndSubtitleAppearance(
+                titleFont: .boldSystemFont(ofSize: 14.0),
+                subtitleFont: .boldSystemFont(ofSize: 12.0),
+                messageFont: .systemFont(ofSize: 12.0),
+                foregroundColor: .white,
+                backgroundColor: Theme.successBackgroundColor,
+                dragIndicatorColor: .lightGray
+            )
+        case .info:
+            return DraggableMessageWithImageAndSubtitleAppearance(
+                titleFont: .boldSystemFont(ofSize: 14.0),
+                subtitleFont: .boldSystemFont(ofSize: 12.0),
+                messageFont: .systemFont(ofSize: 12.0),
+                foregroundColor: .white,
+                backgroundColor: Theme.infoBackgroundColor,
+                dragIndicatorColor: .lightGray
+            )
+        case .warning:
+            return DraggableMessageWithImageAndSubtitleAppearance(
+                titleFont: .boldSystemFont(ofSize: 14.0),
+                subtitleFont: .boldSystemFont(ofSize: 12.0),
+                messageFont: .systemFont(ofSize: 12.0),
+                foregroundColor: .white,
+                backgroundColor: Theme.warningBackgroundColor,
+                dragIndicatorColor: .lightGray
+            )
+        case .danger:
+            return DraggableMessageWithImageAndSubtitleAppearance(
+                titleFont: .boldSystemFont(ofSize: 14.0),
+                subtitleFont: .boldSystemFont(ofSize: 12.0),
+                messageFont: .systemFont(ofSize: 12.0),
+                foregroundColor: .white,
+                backgroundColor: Theme.dangerBackgroundColor,
+                dragIndicatorColor: .lightGray
+            )
+        }
+    }
 }
