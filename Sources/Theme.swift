@@ -7,6 +7,7 @@ import Foundation
 import UIKit
 
 public enum Theme {
+    case neutral
     case success
     case info
     case warning
@@ -14,6 +15,10 @@ public enum Theme {
 }
 
 extension Theme {
+    static var neutralBackgroundColor: UIColor {
+        return UIColor(colorLiteralRed: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+    }
+    
     static var successBackgroundColor: UIColor {
         return UIColor(colorLiteralRed: 0.1254901961, green: 0.8666666667, blue: 0.4901960784, alpha: 1.0)
     }
@@ -34,6 +39,12 @@ extension Theme {
 extension Theme {
     public func appearanceForMessage() -> MessageAppearance {
         switch self {
+        case .neutral:
+            return MessageAppearance(
+                font: .systemFont(ofSize: 12.0),
+                foregroundColor: .black,
+                backgroundColor: Theme.neutralBackgroundColor
+            )
         case .success:
             return MessageAppearance(
                 font: .systemFont(ofSize: 12.0),
@@ -63,6 +74,13 @@ extension Theme {
 
     public func appearanceForMessageWithTitle() -> MessageWithTitleAppearance {
         switch self {
+        case .neutral:
+            return MessageWithTitleAppearance(
+                titleFont: .boldSystemFont(ofSize: 14.0),
+                messageFont: .systemFont(ofSize: 12.0),
+                foregroundColor: .black,
+                backgroundColor: Theme.neutralBackgroundColor
+            )
         case .success:
             return MessageWithTitleAppearance(
                 titleFont: .boldSystemFont(ofSize: 14.0),
@@ -96,6 +114,13 @@ extension Theme {
 
     public func appearanceForMessageWithImage() -> MessageWithImageAppearance {
         switch self {
+        case .neutral:
+            return MessageWithImageAppearance(
+                titleFont: .boldSystemFont(ofSize: 14.0),
+                messageFont: .systemFont(ofSize: 12.0),
+                foregroundColor: .black,
+                backgroundColor: Theme.neutralBackgroundColor
+            )
         case .success:
             return MessageWithImageAppearance(
                 titleFont: .boldSystemFont(ofSize: 14.0),

@@ -25,7 +25,7 @@ final class ViewController: UIViewController {
         let styleSelector = UISegmentedControl(items: ["Simple message", "Message with title", "Message with image"])
         styleSelector.selectedSegmentIndex = 0
 
-        let themeSelector = UISegmentedControl(items: ["Success", "Info", "Warning", "Danger"])
+        let themeSelector = UISegmentedControl(items: ["Neutral", "Success", "Info", "Warning", "Danger"])
         themeSelector.selectedSegmentIndex = 0
 
         let presentationContextSelector = UISegmentedControl(items: ["Window", "View", "View controller"])
@@ -81,7 +81,7 @@ final class ViewController: UIViewController {
         guard let selectedPresentationContextIndex = presentationContextSelector?.selectedSegmentIndex else { return }
         guard let selectedPresentationModeIndex = presentationModelSelector?.selectedSegmentIndex else { return }
 
-        let themes: [Announce.Theme] = [.success, .info, .warning, .danger]
+        let themes: [Announce.Theme] = [.neutral, .success, .info, .warning, .danger]
         let selectedTheme = themes[selectedThemeIndex]
 
         let presentationContexts: [Announce.PresentationContext] = [.window, .view(self.view), .viewController(self)]
