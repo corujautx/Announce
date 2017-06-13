@@ -225,7 +225,7 @@
 		9B52344AD1A9AF03A46CEC4B /* ViewControllerPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerPresenter.swift; sourceTree = "<group>"; };
 		9B5234F633FC04350FCDC863 /* FakeAnnouncement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeAnnouncement.swift; sourceTree = "<group>"; };
 		9B52354133C1DCC1E79CDE74 /* Presenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
-		9B52365B7E376B03B0EEB765 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Theme.swift; path = ../Theme.swift; sourceTree = "<group>"; };
+		9B52365B7E376B03B0EEB765 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Theme.swift; path = Theme.swift; sourceTree = "<group>"; };
 		9B523A6A29F73A7FEB2BA183 /* WindowPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowPresenter.swift; sourceTree = "<group>"; };
 		9B523B12A27C393A1BDA93CA /* TimedPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimedPresenter.swift; sourceTree = "<group>"; };
 		9B523CF4123E1A19FA4AD9C9 /* Appearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Appearance.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -238,7 +238,7 @@
 		9FBEE56B1ED71C520028E482 /* MessageSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageSpec.swift; sourceTree = "<group>"; };
 		9FBEE57F1ED720C50028E482 /* MessageWithTitleSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageWithTitleSpec.swift; sourceTree = "<group>"; };
 		9FBEE5821ED729C30028E482 /* MessageWithImageSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageWithImageSpec.swift; sourceTree = "<group>"; };
-		9FBEE5851ED74C170028E482 /* ThemeSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ThemeSpec.swift; path = ../ThemeSpec.swift; sourceTree = "<group>"; };
+		9FBEE5851ED74C170028E482 /* ThemeSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ThemeSpec.swift; path = ThemeSpec.swift; sourceTree = "<group>"; };
 		9FBEE5881ED75C5F0028E482 /* PresenterFactorySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresenterFactorySpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -266,11 +266,11 @@
 		3549BAFB1DA387DB00C63030 = {
 			isa = PBXGroup;
 			children = (
-				3549BB161DA3890B00C63030 /* Sources */,
-				3549BB191DA3890B00C63030 /* Tests */,
-				3549BB061DA387DB00C63030 /* Products */,
 				35CA2AD51E12933000147290 /* Configuration */,
 				357D954B1DA3F2B400AEC55F /* Frameworks */,
+				3549BB061DA387DB00C63030 /* Products */,
+				3549BB161DA3890B00C63030 /* Sources */,
+				3549BB191DA3890B00C63030 /* Tests */,
 			);
 			sourceTree = "<group>";
 		};
@@ -295,11 +295,11 @@
 		3549BB191DA3890B00C63030 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				3549BB8A1DA38C0A00C63030 /* AnnounceSpec.swift */,
-				9FBEE5881ED75C5F0028E482 /* PresenterFactorySpec.swift */,
+				9B5238DF44C0205B427F6D39 /* Mocks */,
 				3549BB5B1DA38A8C00C63030 /* Supporting Files */,
 				9B523871E19A101896240D46 /* ViewTests */,
-				9B5238DF44C0205B427F6D39 /* Mocks */,
+				3549BB8A1DA38C0A00C63030 /* AnnounceSpec.swift */,
+				9FBEE5881ED75C5F0028E482 /* PresenterFactorySpec.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -308,19 +308,21 @@
 			isa = PBXGroup;
 			children = (
 				3549BB181DA3890B00C63030 /* Announce.h */,
-				3549BB171DA3890B00C63030 /* Info.plist */,
 				3549BB551DA38A5E00C63030 /* Info-tvOS.plist */,
+				3549BB171DA3890B00C63030 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		3549BB5B1DA38A8C00C63030 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				3549BB581DA38A8800C63030 /* Info.plist */,
 				3549BB571DA38A8800C63030 /* Info-tvOS.plist */,
+				3549BB581DA38A8800C63030 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		3549BB5C1DA38AA500C63030 /* Core */ = {
@@ -331,6 +333,7 @@
 				9F1487A31ED3610D00822F7E /* Announce.swift */,
 			);
 			name = Core;
+			path = Core;
 			sourceTree = "<group>";
 		};
 		357D954B1DA3F2B400AEC55F /* Frameworks */ = {
@@ -386,21 +389,21 @@
 			isa = PBXGroup;
 			children = (
 				35CD64E71E60192300AF060B /* Base */,
-				35CD65031E60192300AF060B /* iOS */,
 				35CD65081E60192300AF060B /* Mac OS X */,
+				35CD65031E60192300AF060B /* iOS */,
 				35CD650F1E60192300AF060B /* tvOS */,
 				35CD65141E60192300AF060B /* watchOS */,
 			);
 			name = xcconfigs;
-			path = Carthage/Checkouts/xcconfigs;
-			sourceTree = SOURCE_ROOT;
+			path = xcconfigs;
+			sourceTree = "<group>";
 		};
 		35CD64E71E60192300AF060B /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				35CD64E81E60192300AF060B /* Common.xcconfig */,
 				35CD64E91E60192300AF060B /* Configurations */,
 				35CD64EE1E60192300AF060B /* Targets */,
+				35CD64E81E60192300AF060B /* Common.xcconfig */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -474,11 +477,11 @@
 		9B523871E19A101896240D46 /* ViewTests */ = {
 			isa = PBXGroup;
 			children = (
-				9FBEE5851ED74C170028E482 /* ThemeSpec.swift */,
 				9B523EE137529DD1CD38C451 /* AppearanceSpec.swift */,
 				9FBEE56B1ED71C520028E482 /* MessageSpec.swift */,
-				9FBEE57F1ED720C50028E482 /* MessageWithTitleSpec.swift */,
 				9FBEE5821ED729C30028E482 /* MessageWithImageSpec.swift */,
+				9FBEE57F1ED720C50028E482 /* MessageWithTitleSpec.swift */,
+				9FBEE5851ED74C170028E482 /* ThemeSpec.swift */,
 			);
 			path = ViewTests;
 			sourceTree = "<group>";
@@ -486,8 +489,8 @@
 		9B5238DF44C0205B427F6D39 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
-				9B5230E522EEC38E346CF785 /* FakePresenter.swift */,
 				9B5234F633FC04350FCDC863 /* FakeAnnouncement.swift */,
+				9B5230E522EEC38E346CF785 /* FakePresenter.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -496,23 +499,24 @@
 			isa = PBXGroup;
 			children = (
 				9B52354133C1DCC1E79CDE74 /* Presenter.swift */,
+				9B523B12A27C393A1BDA93CA /* TimedPresenter.swift */,
+				9B52344AD1A9AF03A46CEC4B /* ViewControllerPresenter.swift */,
 				9B523319C1443B47BD9A540C /* ViewPresenter.swift */,
 				9B523A6A29F73A7FEB2BA183 /* WindowPresenter.swift */,
-				9B52344AD1A9AF03A46CEC4B /* ViewControllerPresenter.swift */,
-				9B523B12A27C393A1BDA93CA /* TimedPresenter.swift */,
 			);
 			name = Presenter;
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		9F1487A51ED3613000822F7E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				9B52365B7E376B03B0EEB765 /* Theme.swift */,
-				9F1487A91ED363FA00822F7E /* Message.swift */,
-				9F1487AB1ED3681B00822F7E /* MessageWithTitle.swift */,
-				9F1487AF1ED3786B00822F7E /* MessageWithImage.swift */,
-				9B523CF4123E1A19FA4AD9C9 /* Appearance.swift */,
 				9B523DD97208BF9E3139EC22 /* Announcement.swift */,
+				9B523CF4123E1A19FA4AD9C9 /* Appearance.swift */,
+				9F1487A91ED363FA00822F7E /* Message.swift */,
+				9F1487AF1ED3786B00822F7E /* MessageWithImage.swift */,
+				9F1487AB1ED3681B00822F7E /* MessageWithTitle.swift */,
+				9B52365B7E376B03B0EEB765 /* Theme.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -941,7 +945,7 @@
 					"$(PROJECT_DIR)/Carthage/Checkouts/xcconfigs/Carthage/Build/Mac",
 					"$(PROJECT_DIR)/Carthage/Checkouts/xcconfigs/Carthage/Build/tvOS",
 				);
-				INFOPLIST_FILE = Sources/Info.plist;
+				INFOPLIST_FILE = "Sources/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = corujautx.Announce;
@@ -968,7 +972,7 @@
 					"$(PROJECT_DIR)/Carthage/Checkouts/xcconfigs/Carthage/Build/Mac",
 					"$(PROJECT_DIR)/Carthage/Checkouts/xcconfigs/Carthage/Build/tvOS",
 				);
-				INFOPLIST_FILE = Sources/Info.plist;
+				INFOPLIST_FILE = "Sources/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = corujautx.Announce;
@@ -988,7 +992,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = Tests/Info.plist;
+				INFOPLIST_FILE = "Tests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = corujautx.Announce.AnnounceTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1007,7 +1011,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = Tests/Info.plist;
+				INFOPLIST_FILE = "Tests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = corujautx.Announce.AnnounceTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
