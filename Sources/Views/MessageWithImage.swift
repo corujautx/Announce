@@ -15,24 +15,54 @@ public final class MessageWithImage: UIView, Announcement {
     public let image: UIImage?
     public let appearance: MessageWithImageAppearance
 
-    public init(title: String, message: String, image: UIImage? = nil, appearance: MessageWithImageAppearance? = nil) {
+    public init(title: String,
+                message: String,
+                image: UIImage? = nil,
+                appearance: MessageWithImageAppearance? = nil,
+                tapHandler: ((MessageWithImage) -> Void)? = nil) {
+        
         self.message = message
         self.title = title
         self.image = image
         self.appearance = appearance ?? MessageWithImageAppearance.defaultAppearance()
+        self.tapHandler = tapHandler
 
         super.init(frame: .zero)
 
         self.layout()
         self.bindValues()
+        self.addGestureRecognizers()
     }
 
-    public convenience init(title: String, message: String, image: UIImage? = nil, theme: Theme) {
-        self.init(title: title, message: message, image: image, appearance: theme.appearanceForMessageWithImage())
+    public convenience init(title: String,
+                            message: String,
+                            image: UIImage? = nil,
+                            theme: Theme,
+                            tapHandler: ((MessageWithImage) -> Void)? = nil) {
+        
+        self.init(title: title,
+                  message: message,
+                  image: image,
+                  appearance: theme.appearanceForMessageWithImage(),
+                  tapHandler: tapHandler)
     }
     
     public required init?(coder aDecoder: NSCoder) {
         fatalError("Not supported")
+    }
+    
+    // MARK: - Gesture Recognizers
+    
+    private lazy var tapGestureRecognizer: UITapGestureRecognizer = {
+        return UITapGestureRecognizer(target: self, action: #selector(handleTap))
+    }()
+    public var tapHandler: ((MessageWithImage) -> Void)?
+    @objc private func handleTap() {
+        tapHandler?(self)
+    }
+    
+    private func addGestureRecognizers() {
+        addGestureRecognizer(tapGestureRecognizer)
     }
 
     // MARK: - Layout

@@ -13,22 +13,46 @@ public final class Message: UIView, Announcement {
     public let message: String
     public let appearance: MessageAppearance
 
-    public init(message: String, appearance: MessageAppearance? = nil) {
+    public init(message: String,
+                appearance: MessageAppearance? = nil,
+                tapHandler: ((Message) -> Void)? = nil) {
+        
         self.message = message
         self.appearance = appearance ?? MessageAppearance.defaultAppearance()
-
+        self.tapHandler = tapHandler
+        
         super.init(frame: .zero)
 
         self.layout()
         self.bindValues()
+        self.addGestureRecognizers()
     }
 
-    public convenience init(message: String, theme: Theme) {
-        self.init(message: message, appearance: theme.appearanceForMessage())
+    public convenience init(message: String,
+                            theme: Theme,
+                            tapHandler: ((Message) -> Void)? = nil) {
+        
+        self.init(message: message,
+                  appearance: theme.appearanceForMessage(),
+                  tapHandler: tapHandler)
     }
 
     public required init?(coder aDecoder: NSCoder) {
         fatalError("Not supported")
+    }
+    
+    // MARK: - Gesture Recognizers
+    
+    private lazy var tapGestureRecognizer: UITapGestureRecognizer = {
+        return UITapGestureRecognizer(target: self, action: #selector(handleTap))
+    }()
+    public var tapHandler: ((Message) -> Void)?
+    @objc private func handleTap() {
+        tapHandler?(self)
+    }
+    
+    private func addGestureRecognizers() {
+        addGestureRecognizer(tapGestureRecognizer)
     }
 
     // MARK: - Layout

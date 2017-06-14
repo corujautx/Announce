@@ -17,11 +17,17 @@ public final class DraggableMessageWithImage: UIView, DraggableAnnouncement {
     
     weak var draggableAnnouncementDelegate: DraggableAnnouncementDelegate?
     
-    public init(title: String, message: String, image: UIImage? = nil, appearance: DraggableMessageWithImageAppearance? = nil) {
+    public init(title: String,
+                message: String,
+                image: UIImage? = nil,
+                appearance: DraggableMessageWithImageAppearance? = nil,
+                tapHandler: ((DraggableMessageWithImage) -> Void)? = nil) {
+        
         self.message = message
         self.title = title
         self.image = image
         self.appearance = appearance ?? DraggableMessageWithImageAppearance.defaultAppearance()
+        self.tapHandler = tapHandler
         
         super.init(frame: .zero)
         
@@ -30,29 +36,37 @@ public final class DraggableMessageWithImage: UIView, DraggableAnnouncement {
         self.addGestureRecognizers()
     }
     
-    public convenience init(title: String, message: String, image: UIImage? = nil, theme: Theme) {
-        self.init(title: title, message: message, image: image, appearance: theme.appearanceForDraggableMessageWithImage())
+    public convenience init(title: String,
+                            message: String,
+                            image: UIImage? = nil,
+                            theme: Theme,
+                            tapHandler: ((DraggableMessageWithImage) -> Void)? = nil) {
+        
+        self.init(title: title,
+                  message: message,
+                  image: image,
+                  appearance: theme.appearanceForDraggableMessageWithImage(),
+                  tapHandler: tapHandler)
     }
     
     public required init?(coder aDecoder: NSCoder) {
         fatalError("Not supported")
     }
     
-    // MARK: - Gesture recognizer
-    private lazy var tapGestureRecognizer: UITapGestureRecognizer = { [unowned self] in
-        let gesture = UITapGestureRecognizer()
-        gesture.addTarget(self, action: #selector(handleTap))
-        
-        return gesture
+    // MARK: - Gesture Recognizers
+    
+    private lazy var tapGestureRecognizer: UITapGestureRecognizer = {
+        return UITapGestureRecognizer(target: self, action: #selector(handleTap))
+    }()
+    private lazy var panGestureRecognizer: UIPanGestureRecognizer = { [unowned self] in
+        return UIPanGestureRecognizer(target: self, action: #selector(handlePan))
     }()
     
-    private lazy var panGestureRecognizer: UIPanGestureRecognizer = { [unowned self] in
-        let gesture = UIPanGestureRecognizer()
-        gesture.addTarget(self, action: #selector(handlePan))
-        
-        return gesture
-    }()
-
+    public var tapHandler: ((DraggableMessageWithImage) -> Void)?
+    @objc private func handleTap() {
+        tapHandler?(self)
+    }
+    
     private func addGestureRecognizers() {
         self.addGestureRecognizer(tapGestureRecognizer)
         self.addGestureRecognizer(panGestureRecognizer)
@@ -346,11 +360,7 @@ public final class DraggableMessageWithImage: UIView, DraggableAnnouncement {
         imageView.image = image
     }
     
-    // MARK - Gesture handling
-    
-    @objc private func handleTap() {
-        print("tap")
-    }
+    // MARK - Pan gesture handling
     
     private var panGestureActive: Bool = false
     private var internalHeight: CGFloat = 64

@@ -9,4 +9,5 @@ public protocol Announcement {
     associatedtype AppearanceType: Appearance
 
     var appearance: AppearanceType { get }
+    var tapHandler: ((Self) -> Void)? { get }
 }

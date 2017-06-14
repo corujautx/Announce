@@ -14,23 +14,50 @@ public final class MessageWithTitle: UIView, Announcement {
     public let message: String
     public let appearance: MessageWithTitleAppearance
 
-    public init(title: String, message: String, appearance: MessageWithTitleAppearance? = nil) {
+    public init(title: String,
+                message: String,
+                appearance: MessageWithTitleAppearance? = nil,
+                tapHandler: ((MessageWithTitle) -> Void)? = nil) {
+        
         self.title = title
         self.message = message
         self.appearance = appearance ?? MessageWithTitleAppearance.defaultAppearance()
+        self.tapHandler = tapHandler
 
         super.init(frame: .zero)
 
         self.layout()
         self.bindValues()
+        self.addGestureRecognizers()
     }
 
-    public convenience init(title: String, message: String, theme: Theme) {
-        self.init(title: title, message: message, appearance: theme.appearanceForMessageWithTitle())
+    public convenience init(title: String,
+                            message: String,
+                            theme: Theme,
+                            tapHandler: ((MessageWithTitle) -> Void)? = nil) {
+        
+        self.init(title: title,
+                  message: message,
+                  appearance: theme.appearanceForMessageWithTitle(),
+                  tapHandler: tapHandler)
     }
 
     public required init?(coder aDecoder: NSCoder) {
         fatalError("Not supported")
+    }
+    
+    // MARK: - Gesture Recognizers
+    
+    private lazy var tapGestureRecognizer: UITapGestureRecognizer = {
+        return UITapGestureRecognizer(target: self, action: #selector(handleTap))
+    }()
+    public var tapHandler: ((MessageWithTitle) -> Void)?
+    @objc private func handleTap() {
+        tapHandler?(self)
+    }
+    
+    private func addGestureRecognizers() {
+        addGestureRecognizer(tapGestureRecognizer)
     }
 
     // MARK: - Layout
