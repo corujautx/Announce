@@ -9,11 +9,13 @@
 import Foundation
 import UIKit
 
-public final class DraggableMessageWithImage: UIView, Announcement {
+public final class DraggableMessageWithImage: UIView, DraggableAnnouncement {
     public let message: String
     public let title: String
     public let image: UIImage?
     public let appearance: DraggableMessageWithImageAppearance
+    
+    weak var draggableAnnouncementDelegate: DraggableAnnouncementDelegate?
     
     public init(title: String, message: String, image: UIImage? = nil, appearance: DraggableMessageWithImageAppearance? = nil) {
         self.message = message
@@ -355,20 +357,35 @@ public final class DraggableMessageWithImage: UIView, Announcement {
     private let touchOffset: CGFloat = 44
     private let translateSpeedUp: CGFloat = 1.4
     
+    
+    private var currentHeight: CGFloat {
+        get {
+            return heightLimiter?.constant ?? 0
+        }
+        set {
+            heightLimiter?.constant = newValue
+        }
+    }
+    
+    private var startHeight: CGFloat = 0
     @objc private func handlePan() {
         let translation = panGestureRecognizer.translation(in: self).y
         print("pan: \(translation)")
         
-        if panGestureRecognizer.state == .changed {
+        if panGestureRecognizer.state == .began {
+            currentHeight = self.bounds.height
+            startHeight = currentHeight
+        } else if panGestureRecognizer.state == .changed {
             panGestureActive = true
             
-            let newHeight = max(internalHeight, internalHeight + translation)
+            let newHeight = startHeight + translation
+            print("new: \(newHeight)")
             if newHeight > internalHeight {
-                heightLimiter?.constant = newHeight
+                currentHeight = newHeight
                 self.transform = .identity
             } else {
-                heightLimiter?.constant = internalHeight
-                let amplifiedTranslation = translation * translateSpeedUp
+                currentHeight = internalHeight
+                let amplifiedTranslation = -(internalHeight - newHeight) * translateSpeedUp
                 if amplifiedTranslation > -internalHeight {
                     self.transform = CGAffineTransform(translationX: 0, y: amplifiedTranslation)
                 } else {
@@ -377,28 +394,14 @@ public final class DraggableMessageWithImage: UIView, Announcement {
                     print("bye bye")
                 }
             }
-        } else if panGestureRecognizer.state != .began {
-            panGestureActive = false
-            self.transform = .identity
-
-            let velocity = panGestureRecognizer.velocity(in: self).y
-            if velocity < 0 {
-                if translation < -internalHeight {
-                    heightLimiter?.constant = internalHeight
-
-                    UIView.animate(withDuration: 0.1) {
-                        self.layoutIfNeeded()
-                    }
-                }
-                
-                
-                print("dismiss")
-            } else {
-                heightLimiter?.constant = 127 //TODO: Max size
-                UIView.animate(withDuration: 0.2) {
-                    self.layoutIfNeeded()
-                }
-            }
+        } else {
+            //TODO: Handle drags
+        }
+    }
+    
+    override public var bounds: CGRect {
+        didSet {
+            draggableAnnouncementDelegate?.boundsDidUpdate(bounds)
         }
     }
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol DraggableAnnouncement {
+protocol DraggableAnnouncement: Announcement {
     weak var draggableAnnouncementDelegate: DraggableAnnouncementDelegate? { get set }
 }
 
