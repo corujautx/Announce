@@ -32,6 +32,7 @@
 		9FBEE5841ED72A210028E482 /* MessageWithImageSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBEE5821ED729C30028E482 /* MessageWithImageSpec.swift */; };
 		9FBEE5871ED74C2C0028E482 /* ThemeSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBEE5851ED74C170028E482 /* ThemeSpec.swift */; };
 		9FBEE58A1ED7611F0028E482 /* PresenterFactorySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBEE5881ED75C5F0028E482 /* PresenterFactorySpec.swift */; };
+		A35E8AC61EF0D6A500857E28 /* DraggableAnnouncement.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35E8AC51EF0D6A500857E28 /* DraggableAnnouncement.swift */; };
 		A37793731EF0658D00D61653 /* DraggableMessageWithImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37793721EF0658D00D61653 /* DraggableMessageWithImage.swift */; };
 /* End PBXBuildFile section */
 
@@ -241,6 +242,7 @@
 		9FBEE5821ED729C30028E482 /* MessageWithImageSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageWithImageSpec.swift; sourceTree = "<group>"; };
 		9FBEE5851ED74C170028E482 /* ThemeSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ThemeSpec.swift; path = ../ThemeSpec.swift; sourceTree = "<group>"; };
 		9FBEE5881ED75C5F0028E482 /* PresenterFactorySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresenterFactorySpec.swift; sourceTree = "<group>"; };
+		A35E8AC51EF0D6A500857E28 /* DraggableAnnouncement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableAnnouncement.swift; sourceTree = "<group>"; };
 		A37793721EF0658D00D61653 /* DraggableMessageWithImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableMessageWithImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -516,6 +518,7 @@
 				A37793721EF0658D00D61653 /* DraggableMessageWithImage.swift */,
 				9B523CF4123E1A19FA4AD9C9 /* Appearance.swift */,
 				9B523DD97208BF9E3139EC22 /* Announcement.swift */,
+				A35E8AC51EF0D6A500857E28 /* DraggableAnnouncement.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -781,6 +784,7 @@
 				9B523660939C00E9213A8F23 /* Appearance.swift in Sources */,
 				9B52342B375B859B75EC7023 /* Presenter.swift in Sources */,
 				9B5237D60C0F64466B874A4F /* ViewPresenter.swift in Sources */,
+				A35E8AC61EF0D6A500857E28 /* DraggableAnnouncement.swift in Sources */,
 				9B523FE869D9FF48B38C326B /* WindowPresenter.swift in Sources */,
 				9B5230F4945ABD3C648C0AE2 /* ViewControllerPresenter.swift in Sources */,
 				9B523304AE581E9B043F3147 /* TimedPresenter.swift in Sources */,
