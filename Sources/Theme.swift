@@ -152,48 +152,43 @@ extension Theme {
         }
     }
     
-    public func appearanceForDraggableMessageWithSubtitleAndImage() -> DraggableMessageWithImageAndSubtitleAppearance {
+    public func appearanceForDraggableMessageWithImage() -> DraggableMessageWithImageAppearance {
         switch self {
         case .neutral:
-            return DraggableMessageWithImageAndSubtitleAppearance(
+            return DraggableMessageWithImageAppearance(
                 titleFont: .boldSystemFont(ofSize: 14.0),
-                subtitleFont: .boldSystemFont(ofSize: 12.0),
                 messageFont: .systemFont(ofSize: 12.0),
                 foregroundColor: .black,
                 backgroundColor: Theme.neutralBackgroundColor,
                 dragIndicatorColor: .lightGray
             )
         case .success:
-            return DraggableMessageWithImageAndSubtitleAppearance(
+            return DraggableMessageWithImageAppearance(
                 titleFont: .boldSystemFont(ofSize: 14.0),
-                subtitleFont: .boldSystemFont(ofSize: 12.0),
                 messageFont: .systemFont(ofSize: 12.0),
                 foregroundColor: .white,
                 backgroundColor: Theme.successBackgroundColor,
                 dragIndicatorColor: .lightGray
             )
         case .info:
-            return DraggableMessageWithImageAndSubtitleAppearance(
+            return DraggableMessageWithImageAppearance(
                 titleFont: .boldSystemFont(ofSize: 14.0),
-                subtitleFont: .boldSystemFont(ofSize: 12.0),
                 messageFont: .systemFont(ofSize: 12.0),
                 foregroundColor: .white,
                 backgroundColor: Theme.infoBackgroundColor,
                 dragIndicatorColor: .lightGray
             )
         case .warning:
-            return DraggableMessageWithImageAndSubtitleAppearance(
+            return DraggableMessageWithImageAppearance(
                 titleFont: .boldSystemFont(ofSize: 14.0),
-                subtitleFont: .boldSystemFont(ofSize: 12.0),
                 messageFont: .systemFont(ofSize: 12.0),
                 foregroundColor: .white,
                 backgroundColor: Theme.warningBackgroundColor,
                 dragIndicatorColor: .lightGray
             )
         case .danger:
-            return DraggableMessageWithImageAndSubtitleAppearance(
+            return DraggableMessageWithImageAppearance(
                 titleFont: .boldSystemFont(ofSize: 14.0),
-                subtitleFont: .boldSystemFont(ofSize: 12.0),
                 messageFont: .systemFont(ofSize: 12.0),
                 foregroundColor: .white,
                 backgroundColor: Theme.dangerBackgroundColor,

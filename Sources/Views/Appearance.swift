@@ -91,9 +91,8 @@ public struct MessageWithImageAppearance: Appearance {
     }
 }
 
-public struct DraggableMessageWithImageAndSubtitleAppearance: Appearance {
+public struct DraggableMessageWithImageAppearance: Appearance {
     public let titleFont: UIFont
-    public let subtitleFont: UIFont
     public let messageFont: UIFont
     
     public let foregroundColor: UIColor
@@ -108,7 +107,6 @@ public struct DraggableMessageWithImageAndSubtitleAppearance: Appearance {
     public let dragIndicatorCornerRadius: CGFloat
     
     public init(titleFont: UIFont = .boldSystemFont(ofSize: 12.0),
-                subtitleFont: UIFont = .boldSystemFont(ofSize: 11.0),
                 messageFont: UIFont = .systemFont(ofSize: 11.0),
                 foregroundColor: UIColor,
                 backgroundColor: UIColor,
@@ -119,7 +117,6 @@ public struct DraggableMessageWithImageAndSubtitleAppearance: Appearance {
                 dragIndicatorSize: CGSize = CGSize(width: 40.0, height: 6.0),
                 dragIndicatorCornerRadius: CGFloat? = nil) {
         self.titleFont = titleFont
-        self.subtitleFont = subtitleFont
         self.messageFont = messageFont
         self.foregroundColor = foregroundColor
         self.backgroundColor = backgroundColor
@@ -131,7 +128,7 @@ public struct DraggableMessageWithImageAndSubtitleAppearance: Appearance {
         self.dragIndicatorCornerRadius = dragIndicatorCornerRadius ?? dragIndicatorSize.height / 2
     }
     
-    public static func defaultAppearance() -> DraggableMessageWithImageAndSubtitleAppearance {
-        return DraggableMessageWithImageAndSubtitleAppearance(foregroundColor: .black, backgroundColor: .gray, dragIndicatorColor: .lightGray)
+    public static func defaultAppearance() -> DraggableMessageWithImageAppearance {
+        return DraggableMessageWithImageAppearance(foregroundColor: .black, backgroundColor: .gray, dragIndicatorColor: .lightGray)
     }
 }

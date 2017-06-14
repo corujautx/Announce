@@ -32,7 +32,7 @@
 		9FBEE5841ED72A210028E482 /* MessageWithImageSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBEE5821ED729C30028E482 /* MessageWithImageSpec.swift */; };
 		9FBEE5871ED74C2C0028E482 /* ThemeSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBEE5851ED74C170028E482 /* ThemeSpec.swift */; };
 		9FBEE58A1ED7611F0028E482 /* PresenterFactorySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBEE5881ED75C5F0028E482 /* PresenterFactorySpec.swift */; };
-		A37793731EF0658D00D61653 /* DraggableMessageWithImageAndSubtitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37793721EF0658D00D61653 /* DraggableMessageWithImageAndSubtitle.swift */; };
+		A37793731EF0658D00D61653 /* DraggableMessageWithImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37793721EF0658D00D61653 /* DraggableMessageWithImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -241,7 +241,7 @@
 		9FBEE5821ED729C30028E482 /* MessageWithImageSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageWithImageSpec.swift; sourceTree = "<group>"; };
 		9FBEE5851ED74C170028E482 /* ThemeSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ThemeSpec.swift; path = ../ThemeSpec.swift; sourceTree = "<group>"; };
 		9FBEE5881ED75C5F0028E482 /* PresenterFactorySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresenterFactorySpec.swift; sourceTree = "<group>"; };
-		A37793721EF0658D00D61653 /* DraggableMessageWithImageAndSubtitle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableMessageWithImageAndSubtitle.swift; sourceTree = "<group>"; };
+		A37793721EF0658D00D61653 /* DraggableMessageWithImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableMessageWithImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -513,7 +513,7 @@
 				9F1487A91ED363FA00822F7E /* Message.swift */,
 				9F1487AB1ED3681B00822F7E /* MessageWithTitle.swift */,
 				9F1487AF1ED3786B00822F7E /* MessageWithImage.swift */,
-				A37793721EF0658D00D61653 /* DraggableMessageWithImageAndSubtitle.swift */,
+				A37793721EF0658D00D61653 /* DraggableMessageWithImage.swift */,
 				9B523CF4123E1A19FA4AD9C9 /* Appearance.swift */,
 				9B523DD97208BF9E3139EC22 /* Announcement.swift */,
 			);
@@ -774,7 +774,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F1487AA1ED363FA00822F7E /* Message.swift in Sources */,
-				A37793731EF0658D00D61653 /* DraggableMessageWithImageAndSubtitle.swift in Sources */,
+				A37793731EF0658D00D61653 /* DraggableMessageWithImage.swift in Sources */,
 				9F1487B01ED3786B00822F7E /* MessageWithImage.swift in Sources */,
 				9F1487A41ED3610D00822F7E /* Announce.swift in Sources */,
 				9F1487AC1ED3681B00822F7E /* MessageWithTitle.swift in Sources */,

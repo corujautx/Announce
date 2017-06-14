@@ -22,7 +22,7 @@ final class ViewController: UIViewController {
 
         view.backgroundColor = .white
 
-        let styleSelector = UISegmentedControl(items: ["Simple message", "Message with title", "Message with image", "Message with subtitle"])
+        let styleSelector = UISegmentedControl(items: ["Simple message", "Message with title", "Message with image", "Draggable message"])
         styleSelector.selectedSegmentIndex = 0
 
         let themeSelector = UISegmentedControl(items: ["Neutral", "Success", "Info", "Warning", "Danger"])
@@ -110,10 +110,9 @@ final class ViewController: UIViewController {
             )
             token = announce(message, on: selectedPresentationContext, withMode: selectedPresentationMode)
         case 3:
-            let message = DraggableMessageWithImageAndSubtitle(
+            let message = DraggableMessageWithImage(
                 title: "Title and image",
-                subtitle: "Subtitle",
-                message: "A long message below...\nI have several lines",
+                message: "A long message below...\nI have several lines\nI have several lines\nI have several lines\nI have several lines",
                 image: nil,
                 theme: selectedTheme
             )
