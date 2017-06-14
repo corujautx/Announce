@@ -94,7 +94,7 @@ public final class MessageWithImage: UIView, Announcement {
         return label
     }()
 
-    lazy var imageView: UIImageView = {
+    public private (set) lazy var imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = self.appearance.imageContentMode
         imageView.setContentCompressionResistancePriority(UILayoutPriorityDefaultHigh, for: .horizontal)
