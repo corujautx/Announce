@@ -16,23 +16,23 @@ public enum Theme {
 
 extension Theme {
     static var neutralBackgroundColor: UIColor {
-        return UIColor(colorLiteralRed: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        return #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
     }
     
     static var successBackgroundColor: UIColor {
-        return UIColor(colorLiteralRed: 0.1254901961, green: 0.8666666667, blue: 0.4901960784, alpha: 1.0)
+        return #colorLiteral(red: 0.1254901961, green: 0.8666666667, blue: 0.4901960784, alpha: 1.0)
     }
 
     static var infoBackgroundColor: UIColor {
-        return UIColor(colorLiteralRed: 0.03137254902, green: 0.8117647059, blue: 0.9058823529, alpha: 1.0)
+        return #colorLiteral(red: 0.03137254902, green: 0.8117647059, blue: 0.9058823529, alpha: 1.0)
     }
 
     static var warningBackgroundColor: UIColor {
-        return UIColor(colorLiteralRed: 0.9921568627, green: 0.7647058824, blue: 0.2352941176, alpha: 1.0)
+        return #colorLiteral(red: 0.9921568627, green: 0.7647058824, blue: 0.2352941176, alpha: 1.0)
     }
 
     static var dangerBackgroundColor: UIColor {
-        return UIColor(colorLiteralRed: 1.0, green: 0.3450980392, blue: 0.3450980392, alpha: 1.0)
+        return #colorLiteral(red: 1.0, green: 0.3450980392, blue: 0.3450980392, alpha: 1.0)
     }
 }
 
