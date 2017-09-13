@@ -96,7 +96,7 @@ public final class DraggableMessageWithImage: UIView, DraggableAnnouncement {
         label.font = self.appearance.messageFont
         label.textColor = self.appearance.foregroundColor
         
-        label.setContentCompressionResistancePriority(UILayoutPriority.defaultLow, for: .vertical)
+        label.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
         
         label.translatesAutoresizingMaskIntoConstraints = false
         
