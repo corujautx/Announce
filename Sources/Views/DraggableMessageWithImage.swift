@@ -96,7 +96,7 @@ public final class DraggableMessageWithImage: UIView, DraggableAnnouncement {
         label.font = self.appearance.messageFont
         label.textColor = self.appearance.foregroundColor
         
-        label.setContentCompressionResistancePriority(UILayoutPriorityDefaultLow, for: .vertical)
+        label.setContentCompressionResistancePriority(UILayoutPriority.defaultLow, for: .vertical)
         
         label.translatesAutoresizingMaskIntoConstraints = false
         
@@ -106,7 +106,7 @@ public final class DraggableMessageWithImage: UIView, DraggableAnnouncement {
     public private (set) lazy var imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = self.appearance.imageContentMode
-        imageView.setContentCompressionResistancePriority(UILayoutPriorityDefaultHigh, for: .horizontal)
+        imageView.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
         
         imageView.backgroundColor = .lightGray
         
@@ -139,7 +139,7 @@ public final class DraggableMessageWithImage: UIView, DraggableAnnouncement {
         addSubview(imageView)
         addSubview(dragIndicator)
         
-        setContentHuggingPriority(UILayoutPriorityDefaultHigh, for: .vertical)
+        setContentHuggingPriority(.defaultHigh, for: .vertical)
         
         layoutTitle()
         layoutImage()
@@ -347,7 +347,7 @@ public final class DraggableMessageWithImage: UIView, DraggableAnnouncement {
                                                multiplier: 1.0,
                                                constant: internalHeight)
         heightLimiter.isActive = true
-        heightLimiter.priority = 1000
+        heightLimiter.priority = .required
         
         self.heightLimiter = heightLimiter
     }
