@@ -97,7 +97,7 @@ public final class MessageWithImage: UIView, Announcement {
     public private (set) lazy var imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = self.appearance.imageContentMode
-        imageView.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
+        imageView.setContentCompressionResistancePriority(UILayoutPriorityDefaultHigh, for: .horizontal)
 
         imageView.layer.masksToBounds = true
         imageView.layer.cornerRadius = self.appearance.imageCornerRadius
@@ -114,7 +114,7 @@ public final class MessageWithImage: UIView, Announcement {
         addSubview(messageLabel)
         addSubview(imageView)
 
-        setContentHuggingPriority(.defaultHigh, for: .vertical)
+        setContentHuggingPriority(UILayoutPriorityDefaultHigh, for: .vertical)
 
         layoutImage()
         layoutTitle()
@@ -255,7 +255,7 @@ public final class MessageWithImage: UIView, Announcement {
             multiplier: 1.0,
             constant: -8.0
         )
-        bottomConstraint.priority = .defaultLow
+        bottomConstraint.priority = UILayoutPriorityDefaultLow
 
         topConstraint.isActive = true
         leadingConstraint.isActive = true

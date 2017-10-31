@@ -19,12 +19,17 @@ public enum PresentationMode {
 
 public final class DismissalToken {
     private let _dismiss: () -> ()
+    private var executed: Bool = false
+
     public init(_ _dismiss: @escaping () -> ()) {
         self._dismiss = _dismiss
     }
 
     public func dismiss() {
-        self._dismiss()
+        if !executed {
+            executed = true
+            self._dismiss()
+        }
     }
 }
 
