@@ -6,7 +6,7 @@ branches:
 
 xcode_project: Announce.xcodeproj
 xcode_scheme: Announce-iOS
-osx_image: xcode8.3
+osx_image: xcode9.0
 xcode_sdk: iphonesimulator8.3
 
 script:
