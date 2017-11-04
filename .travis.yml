@@ -10,5 +10,5 @@ osx_image: xcode9
 xcode_sdk: iphonesimulator8.4
 
 script:
-- pod lib lint Announce.podspec
+- bundle exec pod lib lint Announce.podspec
 - xcodebuild clean build test -workspace Announce.xcworkspace -scheme Announce-iOS -destination "platform=iOS Simulator,name=iPhone 5s,OS=8.4"
