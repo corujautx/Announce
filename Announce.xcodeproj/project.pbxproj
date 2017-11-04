@@ -32,6 +32,7 @@
 		9FBEE5841ED72A210028E482 /* MessageWithImageSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBEE5821ED729C30028E482 /* MessageWithImageSpec.swift */; };
 		9FBEE5871ED74C2C0028E482 /* ThemeSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBEE5851ED74C170028E482 /* ThemeSpec.swift */; };
 		9FBEE58A1ED7611F0028E482 /* PresenterFactorySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBEE5881ED75C5F0028E482 /* PresenterFactorySpec.swift */; };
+		A304C6C41FAE42E20029A3EC /* TappableAnnouncement.swift in Sources */ = {isa = PBXBuildFile; fileRef = A304C6C31FAE42E20029A3EC /* TappableAnnouncement.swift */; };
 		A35545581FA9439F001F1E66 /* DraggableAnnouncement.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35545561FA9439E001F1E66 /* DraggableAnnouncement.swift */; };
 		A35545591FA9439F001F1E66 /* DraggableMessageWithImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35545571FA9439E001F1E66 /* DraggableMessageWithImage.swift */; };
 /* End PBXBuildFile section */
@@ -242,6 +243,7 @@
 		9FBEE5821ED729C30028E482 /* MessageWithImageSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageWithImageSpec.swift; sourceTree = "<group>"; };
 		9FBEE5851ED74C170028E482 /* ThemeSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeSpec.swift; sourceTree = "<group>"; };
 		9FBEE5881ED75C5F0028E482 /* PresenterFactorySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresenterFactorySpec.swift; sourceTree = "<group>"; };
+		A304C6C31FAE42E20029A3EC /* TappableAnnouncement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TappableAnnouncement.swift; sourceTree = "<group>"; };
 		A35545561FA9439E001F1E66 /* DraggableAnnouncement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableAnnouncement.swift; sourceTree = "<group>"; };
 		A35545571FA9439E001F1E66 /* DraggableMessageWithImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableMessageWithImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -517,6 +519,7 @@
 				9F1487A91ED363FA00822F7E /* Message.swift */,
 				9F1487AF1ED3786B00822F7E /* MessageWithImage.swift */,
 				9F1487AB1ED3681B00822F7E /* MessageWithTitle.swift */,
+				A304C6C31FAE42E20029A3EC /* TappableAnnouncement.swift */,
 				9B52365B7E376B03B0EEB765 /* Theme.swift */,
 			);
 			path = Views;
@@ -775,6 +778,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A304C6C41FAE42E20029A3EC /* TappableAnnouncement.swift in Sources */,
 				9F1487AA1ED363FA00822F7E /* Message.swift in Sources */,
 				9F1487B01ED3786B00822F7E /* MessageWithImage.swift in Sources */,
 				9F1487A41ED3610D00822F7E /* Announce.swift in Sources */,

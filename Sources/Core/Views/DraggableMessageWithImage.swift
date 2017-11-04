@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-public final class DraggableMessageWithImage: UIView, DraggableAnnouncement {
+public final class DraggableMessageWithImage: UIView, DraggableAnnouncement, TappableAnnouncement {
     public let message: String
     public let title: String
     public let image: UIImage?

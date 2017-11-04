@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-public final class Message: UIView, Announcement {
+public final class Message: UIView, TappableAnnouncement {
     public let message: String
     public let appearance: MessageAppearance
 
