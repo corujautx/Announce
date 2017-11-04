@@ -22,10 +22,10 @@ final class ViewController: UIViewController {
 
         view.backgroundColor = .white
 
-        let styleSelector = UISegmentedControl(items: ["Simple message", "Message with title", "Message with image"])
+        let styleSelector = UISegmentedControl(items: ["Simple message", "Message with title", "Message with image", "Draggable message"])
         styleSelector.selectedSegmentIndex = 0
 
-        let themeSelector = UISegmentedControl(items: ["Success", "Info", "Warning", "Danger"])
+        let themeSelector = UISegmentedControl(items: ["Neutral", "Success", "Info", "Warning", "Danger"])
         themeSelector.selectedSegmentIndex = 0
 
         let presentationContextSelector = UISegmentedControl(items: ["Window", "View", "View controller"])
@@ -81,7 +81,7 @@ final class ViewController: UIViewController {
         guard let selectedPresentationContextIndex = presentationContextSelector?.selectedSegmentIndex else { return }
         guard let selectedPresentationModeIndex = presentationModelSelector?.selectedSegmentIndex else { return }
 
-        let themes: [Announce.Theme] = [.success, .info, .warning, .danger]
+        let themes: [Announce.Theme] = [.neutral, .success, .info, .warning, .danger]
         let selectedTheme = themes[selectedThemeIndex]
 
         let presentationContexts: [Announce.PresentationContext] = [.window, .view(self.view), .viewController(self)]
@@ -105,6 +105,14 @@ final class ViewController: UIViewController {
             let message = MessageWithImage(
                 title: "Title and image",
                 message: "A long message below...",
+                image: nil,
+                theme: selectedTheme
+            )
+            token = announce(message, on: selectedPresentationContext, withMode: selectedPresentationMode)
+        case 3:
+            let message = DraggableMessageWithImage(
+                title: "Title and image",
+                message: "A long message below...\nI have several lines\nI have several lines\nI have several lines\nI have several lines",
                 image: nil,
                 theme: selectedTheme
             )

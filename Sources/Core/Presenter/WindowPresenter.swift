@@ -7,7 +7,7 @@ import Foundation
 import UIKit
 
 final class WindowPresenter: Presenter {
-    private lazy var window: UIWindow = {
+    fileprivate lazy var window: UIWindow = {
         let window = UIWindow(frame: UIScreen.main.bounds)
 
         window.windowLevel = UIWindowLevelStatusBar + 1
@@ -118,5 +118,11 @@ final class WindowPresenter: Presenter {
         )
 
         return dismissalToken
+    }
+}
+
+extension WindowPresenter: DraggableAnnouncementDelegate {
+    func boundsDidUpdate(_ newBounds: CGRect) {
+        window.bounds = newBounds
     }
 }

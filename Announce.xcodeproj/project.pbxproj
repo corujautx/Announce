@@ -32,6 +32,9 @@
 		9FBEE5841ED72A210028E482 /* MessageWithImageSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBEE5821ED729C30028E482 /* MessageWithImageSpec.swift */; };
 		9FBEE5871ED74C2C0028E482 /* ThemeSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBEE5851ED74C170028E482 /* ThemeSpec.swift */; };
 		9FBEE58A1ED7611F0028E482 /* PresenterFactorySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBEE5881ED75C5F0028E482 /* PresenterFactorySpec.swift */; };
+		A304C6C41FAE42E20029A3EC /* TappableAnnouncement.swift in Sources */ = {isa = PBXBuildFile; fileRef = A304C6C31FAE42E20029A3EC /* TappableAnnouncement.swift */; };
+		A35545581FA9439F001F1E66 /* DraggableAnnouncement.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35545561FA9439E001F1E66 /* DraggableAnnouncement.swift */; };
+		A35545591FA9439F001F1E66 /* DraggableMessageWithImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35545571FA9439E001F1E66 /* DraggableMessageWithImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -225,7 +228,7 @@
 		9B52344AD1A9AF03A46CEC4B /* ViewControllerPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerPresenter.swift; sourceTree = "<group>"; };
 		9B5234F633FC04350FCDC863 /* FakeAnnouncement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeAnnouncement.swift; sourceTree = "<group>"; };
 		9B52354133C1DCC1E79CDE74 /* Presenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
-		9B52365B7E376B03B0EEB765 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Theme.swift; path = Theme.swift; sourceTree = "<group>"; };
+		9B52365B7E376B03B0EEB765 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		9B523A6A29F73A7FEB2BA183 /* WindowPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowPresenter.swift; sourceTree = "<group>"; };
 		9B523B12A27C393A1BDA93CA /* TimedPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimedPresenter.swift; sourceTree = "<group>"; };
 		9B523CF4123E1A19FA4AD9C9 /* Appearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Appearance.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -238,8 +241,11 @@
 		9FBEE56B1ED71C520028E482 /* MessageSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageSpec.swift; sourceTree = "<group>"; };
 		9FBEE57F1ED720C50028E482 /* MessageWithTitleSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageWithTitleSpec.swift; sourceTree = "<group>"; };
 		9FBEE5821ED729C30028E482 /* MessageWithImageSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageWithImageSpec.swift; sourceTree = "<group>"; };
-		9FBEE5851ED74C170028E482 /* ThemeSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ThemeSpec.swift; path = ThemeSpec.swift; sourceTree = "<group>"; };
+		9FBEE5851ED74C170028E482 /* ThemeSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeSpec.swift; sourceTree = "<group>"; };
 		9FBEE5881ED75C5F0028E482 /* PresenterFactorySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresenterFactorySpec.swift; sourceTree = "<group>"; };
+		A304C6C31FAE42E20029A3EC /* TappableAnnouncement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TappableAnnouncement.swift; sourceTree = "<group>"; };
+		A35545561FA9439E001F1E66 /* DraggableAnnouncement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableAnnouncement.swift; sourceTree = "<group>"; };
+		A35545571FA9439E001F1E66 /* DraggableMessageWithImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableMessageWithImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -311,7 +317,6 @@
 				3549BB551DA38A5E00C63030 /* Info-tvOS.plist */,
 				3549BB171DA3890B00C63030 /* Info.plist */,
 			);
-			name = "Supporting Files";
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
@@ -321,7 +326,6 @@
 				3549BB571DA38A8800C63030 /* Info-tvOS.plist */,
 				3549BB581DA38A8800C63030 /* Info.plist */,
 			);
-			name = "Supporting Files";
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
@@ -332,7 +336,6 @@
 				9F1487A51ED3613000822F7E /* Views */,
 				9F1487A31ED3610D00822F7E /* Announce.swift */,
 			);
-			name = Core;
 			path = Core;
 			sourceTree = "<group>";
 		};
@@ -394,7 +397,6 @@
 				35CD650F1E60192300AF060B /* tvOS */,
 				35CD65141E60192300AF060B /* watchOS */,
 			);
-			name = xcconfigs;
 			path = xcconfigs;
 			sourceTree = "<group>";
 		};
@@ -504,7 +506,6 @@
 				9B523319C1443B47BD9A540C /* ViewPresenter.swift */,
 				9B523A6A29F73A7FEB2BA183 /* WindowPresenter.swift */,
 			);
-			name = Presenter;
 			path = Presenter;
 			sourceTree = "<group>";
 		};
@@ -513,9 +514,12 @@
 			children = (
 				9B523DD97208BF9E3139EC22 /* Announcement.swift */,
 				9B523CF4123E1A19FA4AD9C9 /* Appearance.swift */,
+				A35545561FA9439E001F1E66 /* DraggableAnnouncement.swift */,
+				A35545571FA9439E001F1E66 /* DraggableMessageWithImage.swift */,
 				9F1487A91ED363FA00822F7E /* Message.swift */,
 				9F1487AF1ED3786B00822F7E /* MessageWithImage.swift */,
 				9F1487AB1ED3681B00822F7E /* MessageWithTitle.swift */,
+				A304C6C31FAE42E20029A3EC /* TappableAnnouncement.swift */,
 				9B52365B7E376B03B0EEB765 /* Theme.swift */,
 			);
 			path = Views;
@@ -774,9 +778,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A304C6C41FAE42E20029A3EC /* TappableAnnouncement.swift in Sources */,
 				9F1487AA1ED363FA00822F7E /* Message.swift in Sources */,
 				9F1487B01ED3786B00822F7E /* MessageWithImage.swift in Sources */,
 				9F1487A41ED3610D00822F7E /* Announce.swift in Sources */,
+				A35545591FA9439F001F1E66 /* DraggableMessageWithImage.swift in Sources */,
 				9F1487AC1ED3681B00822F7E /* MessageWithTitle.swift in Sources */,
 				9B523660939C00E9213A8F23 /* Appearance.swift in Sources */,
 				9B52342B375B859B75EC7023 /* Presenter.swift in Sources */,
@@ -785,6 +791,7 @@
 				9B5230F4945ABD3C648C0AE2 /* ViewControllerPresenter.swift in Sources */,
 				9B523304AE581E9B043F3147 /* TimedPresenter.swift in Sources */,
 				9B523D05A7828FC68B299A42 /* Announcement.swift in Sources */,
+				A35545581FA9439F001F1E66 /* DraggableAnnouncement.swift in Sources */,
 				9B5239043E143496AA8565B7 /* Theme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
