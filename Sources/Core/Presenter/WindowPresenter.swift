@@ -8,14 +8,6 @@ import UIKit
 
 final class WindowPresenter: Presenter {
     
-    fileprivate lazy var safeAreaTopInset: CGFloat = {
-        if #available(iOSApplicationExtension 11.0, *) {
-            return self.window.safeAreaInsets.top
-        } else {
-            return 0
-        }
-    }()
-    
     fileprivate lazy var window: UIWindow = {
         let window = UIWindow(frame: UIScreen.main.bounds)
 
@@ -24,11 +16,8 @@ final class WindowPresenter: Presenter {
         return window
     }()
     
-    private let safeAreaHole = UIView()
-
     private var hiddenConstraint: NSLayoutConstraint?
     private var displayingConstraint: NSLayoutConstraint?
-    private var holeHeightConstraint: NSLayoutConstraint?
 
     private func installConstraints(announcement: UIView) {
         let leadingConstraint = NSLayoutConstraint(
@@ -71,80 +60,17 @@ final class WindowPresenter: Presenter {
             toItem: window,
             attribute: .top,
             multiplier: 1.0,
-            constant: safeAreaTopInset
+            constant: 0.0
         )
         displayingConstraint.isActive = false
 
         self.hiddenConstraint = hiddenConstraint
         self.displayingConstraint = displayingConstraint
     }
-    
-    private func fillSafeAreaHole<T: Announcement>(announcement: T) where T: UIView {
-        safeAreaHole.backgroundColor = announcement.backgroundColor
-        safeAreaHole.translatesAutoresizingMaskIntoConstraints = false
-        window.addSubview(safeAreaHole)
-        
-        let leadingConstraint = NSLayoutConstraint(
-            item: safeAreaHole,
-            attribute: .leading,
-            relatedBy: .equal,
-            toItem: window,
-            attribute: .leading,
-            multiplier: 1.0,
-            constant: 0.0
-        )
-        leadingConstraint.isActive = true
-        
-        let trailingConstraint = NSLayoutConstraint(
-            item: safeAreaHole,
-            attribute: .trailing,
-            relatedBy: .equal,
-            toItem: window,
-            attribute: .trailing,
-            multiplier: 1.0,
-            constant: 0.0
-        )
-        trailingConstraint.isActive = true
-        
-        let topConstraint = NSLayoutConstraint(
-            item: safeAreaHole,
-            attribute: .top,
-            relatedBy: .equal,
-            toItem: window,
-            attribute: .top,
-            multiplier: 1.0,
-            constant: 0
-        )
-        topConstraint.isActive = true
-        
-        let heightConstraint = NSLayoutConstraint(
-            item: safeAreaHole,
-            attribute: .height,
-            relatedBy: .equal,
-            toItem: nil,
-            attribute: .notAnAttribute,
-            multiplier: 1.0,
-            constant: 0
-        )
-        heightConstraint.isActive = true
-
-        self.holeHeightConstraint = heightConstraint
-    }
 
     @discardableResult func present<T: Announcement>(announcement: T) -> DismissalToken where T: UIView {
         announcement.translatesAutoresizingMaskIntoConstraints = false
         window.isHidden = false
-
-        if safeAreaTopInset > 0 {
-            fillSafeAreaHole(announcement: announcement)
-            safeAreaHole.bounds = CGRect(
-                origin: .zero,
-                size: CGSize(
-                    width: announcement.frame.width,
-                    height: safeAreaTopInset
-                )
-            )
-        }
         
         window.addSubview(announcement)
         installConstraints(announcement: announcement)
@@ -154,13 +80,12 @@ final class WindowPresenter: Presenter {
             origin: .zero,
             size: CGSize(
                 width: announcement.frame.width,
-                height: announcement.frame.height + safeAreaTopInset
+                height: announcement.frame.height
             )
         )
 
         hiddenConstraint?.isActive = false
         displayingConstraint?.isActive = true
-        holeHeightConstraint?.constant = safeAreaTopInset
 
         let strongWindow = self.window
         let dismissalToken = DismissalToken { [weak displayingConstraint, weak hiddenConstraint] in
