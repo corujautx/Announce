@@ -68,6 +68,22 @@ public final class Message: UIView, TappableAnnouncement {
 
         return label
     }()
+    
+    private var safeAreaTopInset: CGFloat {
+        if #available(iOSApplicationExtension 11.0, *),
+            let superview = self.superview,
+            superview is UIWindow {
+            return superview.safeAreaInsets.top
+        } else {
+            return 0
+        }
+    }
+    
+    public override func didMoveToSuperview() {
+        labelTopConstraint?.constant = safeAreaTopInset + 8
+    }
+    
+    private var labelTopConstraint: NSLayoutConstraint?
 
     private func layout() {
         self.backgroundColor = appearance.backgroundColor
@@ -100,7 +116,7 @@ public final class Message: UIView, TappableAnnouncement {
             toItem: self,
             attribute: .top,
             multiplier: 1.0,
-            constant: 8.0
+            constant: safeAreaTopInset + 8
         )
 
         let labelBottomConstraint = NSLayoutConstraint(
@@ -117,6 +133,8 @@ public final class Message: UIView, TappableAnnouncement {
         labelTrailingConstraint.isActive = true
         labelTopConstraint.isActive = true
         labelBottomConstraint.isActive = true
+        
+        self.labelTopConstraint = labelTopConstraint
     }
 
     // MARK: - Assignment
