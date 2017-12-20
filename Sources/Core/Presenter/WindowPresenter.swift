@@ -7,6 +7,7 @@ import Foundation
 import UIKit
 
 final class WindowPresenter: Presenter {
+    
     fileprivate lazy var window: UIWindow = {
         let window = UIWindow(frame: UIScreen.main.bounds)
 
@@ -14,7 +15,7 @@ final class WindowPresenter: Presenter {
 
         return window
     }()
-
+    
     private var hiddenConstraint: NSLayoutConstraint?
     private var displayingConstraint: NSLayoutConstraint?
 
@@ -70,7 +71,7 @@ final class WindowPresenter: Presenter {
     @discardableResult func present<T: Announcement>(announcement: T) -> DismissalToken where T: UIView {
         announcement.translatesAutoresizingMaskIntoConstraints = false
         window.isHidden = false
-
+        
         window.addSubview(announcement)
         installConstraints(announcement: announcement)
 

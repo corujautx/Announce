@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
  s.name = 'Announce'
- s.version = '1.1'
+ s.version = '1.2'
  s.license = { :type => "MIT", :file => "LICENSE" }
  s.summary = 'A simple framework to display alert and notification messages in Swift'
  s.homepage = 'https://github.com/corujautx'
